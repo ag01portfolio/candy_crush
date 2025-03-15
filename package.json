@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "abhi-dev": "vite preview"
+    "abhi": "vite"
   },
   "dependencies": {
     "react": "^19.0.0",

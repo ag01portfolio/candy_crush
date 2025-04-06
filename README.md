@@ -2,6 +2,8 @@
 
 ## Candy Crush Prototype in React ⚛️🍬
 
+## Its ready to Play https://abhi-candy.netlify.app/ Please click on the link to play
+
 This is a simplified Candy Crush game built with React. It features core game logic for matching and scoring. https://github.com/ag01portfolio/candy_crush
 
 Dev Doc :

@@ -8,7 +8,7 @@ import redCandy from './images/red-candy.png'
 import yellowCandy from './images/yellow-candy.png'
 import blank from './images/blank.png'
 
-const width = 8
+const width = 8;
 const candyColors = [
   blueCandy,
   orangeCandy,
@@ -23,6 +23,7 @@ const App = () => {
   const [squareBeingDragged, setSquareBeingDragged] = useState(null)
   const [squareBeingReplaced, setSquareBeingReplaced] = useState(null)
   const [scoreDisplay, setScoreDisplay] = useState(0)
+  const [abhiHackNav, setAbhiHackNav] = useState(false)
 
   const checkForColumnOfFour = () => {
     for (let i = 0; i <= 39; i++) {
@@ -125,7 +126,7 @@ const App = () => {
       squareBeingDraggedId + width
     ]
 
-    const validMove = validMoves.includes(squareBeingReplacedId)
+    const validMove = abhiHackNav || validMoves.includes(squareBeingReplacedId)
 
     const isAColumnOfFour = checkForColumnOfFour()
     const isARowOfFour = checkForRowOfFour()
@@ -160,6 +161,25 @@ const App = () => {
   }, [])
 
   useEffect(() => {
+    const handleKeyDown = (event) => {
+      const pressedKey = event.key;
+      if (pressedKey === 'A' || pressedKey === 'a') {
+        alert(`Nav Cheat code activated.. Happy Hacking!!!`);
+        setAbhiHackNav(true)
+      } else if (pressedKey === 'D' || pressedKey === 'd') {
+        alert(`Nav Cheat code Disabled`);
+        setAbhiHackNav(false)
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+
+    // clean up 
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       checkForColumnOfFour()
       checkForRowOfFour()
@@ -180,7 +200,7 @@ const App = () => {
         padding: '10px'
 
       }}>
-        <p>Candy Crush Prototype in React ⚛️🍬</p>
+        <p style={{ color: " rgba(243, 14, 224, 0.87) ", fontSize: 20 }}>Candy Crush Prototype in React ⚛️🍬</p>
         <ScoreBoard score={scoreDisplay} />
         <div style={{
           borderRadius: '10px',

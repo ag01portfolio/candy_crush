@@ -1,6 +1,4 @@
-# candy_crush-react
-
-## Candy Crush Prototype in React ⚛️🍬
+# candy_crush-react ⚛️🍬
 
 ## Its ready to Play https://abhi-candy.netlify.app/ Please click on the link to play
 

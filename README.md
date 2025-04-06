@@ -17,3 +17,6 @@ Dev Doc :
 1.  **Enable Dragging:** Make candies draggable using the `draggable` attribute.
 2.  **Handle Drag Over:** Allow dropping on other candy squares using `onDragOver`.
 3.  **Implement Scoreboard:** Display and update the player's score based on matches made.
+
+
+![image](https://github.com/user-attachments/assets/0401fffb-ac87-43e5-8a05-223c86e9dd86)

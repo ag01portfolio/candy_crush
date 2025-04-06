@@ -174,24 +174,41 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="game">
-        {currentColorArrangement.map((candyColor, index) => (
-          <img
-            key={index}
-            src={candyColor}
-            alt={candyColor}
-            data-id={index}
-            draggable={true}
-            onDragStart={dragStart}
-            onDragOver={(e) => e.preventDefault()}
-            onDragEnter={(e) => e.preventDefault()}
-            onDragLeave={(e) => e.preventDefault()}
-            onDrop={dragDrop}
-            onDragEnd={dragEnd}
-          />
-        ))}
+      <div className="game" style={{
+        alignItems: "center",
+        justifyItems: "center",
+        padding: '10px'
+
+      }}>
+        <p>Candy Crush Prototype in React ⚛️🍬</p>
+        <ScoreBoard score={scoreDisplay} />
+        <div style={{
+          borderRadius: '10px',
+          width: '1000px',
+          background: 'linear-gradient(rgba(243, 14, 224, 0.5),  rgba(71, 140, 197, 0.49) 100%)',
+        }}>
+          {currentColorArrangement.map((candyColor, index) => (
+            <img
+              key={index}
+              src={candyColor}
+              alt={candyColor}
+              data-id={index}
+              draggable={true}
+              onDragStart={dragStart}
+              onDragOver={(e) => e.preventDefault()}
+              onDragEnter={(e) => e.preventDefault()}
+              onDragLeave={(e) => e.preventDefault()}
+              onDrop={dragDrop}
+              onDragEnd={dragEnd}
+            />
+          ))}
+        </div>
+        <div style={{ padding: '10px', }}>
+          This is a Prototype Candy Crush game built with React.
+          It features core game logic for matching candy and scoring.
+          <p>Code base : https://github.com/ag01portfolio/candy_crush</p>
+        </div>
       </div>
-      <ScoreBoard score={scoreDisplay} />
     </div>
   )
 }

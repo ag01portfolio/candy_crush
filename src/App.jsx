@@ -30,9 +30,19 @@ function App() {
   }, [])
 
   return (
-    <>
-      Yo its working!
-    </>
+    <div className='app'>
+      <div className='game'>
+        {currentColorArrangement.map((candyColor, index) => {
+          return (
+            <img
+              key={index}
+              className='candy'
+              style={{ backgroundColor: candyColor }}
+            />
+          )
+        })}
+      </div>
+    </div>
   )
 }
 

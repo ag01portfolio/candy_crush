@@ -7,6 +7,8 @@ import purpleCandy from './images/purple-candy.png'
 import redCandy from './images/red-candy.png'
 import yellowCandy from './images/yellow-candy.png'
 import blank from './images/blank.png'
+import AbhiGitView from './components/gitView';
+
 
 const width = 8;
 const candyColors = [
@@ -193,41 +195,49 @@ const App = () => {
 
 
   return (
-    <div className="app">
-      <div className="game" style={{
-        alignItems: "center",
-        justifyItems: "center",
-        padding: '10px'
-
-      }}>
-        <p style={{ color: " rgba(243, 14, 224, 0.87) ", fontSize: 20 }}>Candy Crush Prototype in React ⚛️🍬</p>
-        <ScoreBoard score={scoreDisplay} />
-        <div style={{
-          borderRadius: '10px',
-          width: '1000px',
-          background: 'linear-gradient(rgba(243, 14, 224, 0.5),  rgba(71, 140, 197, 0.49) 100%)',
+    <div style={{
+      background: 'linear-gradient(rgba(76, 166, 226, 0.28),  rgba(32, 230, 203, 0.34) 100%)',
+      width: '100%',
+      height: '100%'
+    }}>
+      <div className="app" >
+        <div className="game" style={{
+          alignItems: "center",
+          justifyItems: "center",
+          padding: '10px',
         }}>
-          {currentColorArrangement.map((candyColor, index) => (
-            <img
-              key={index}
-              src={candyColor}
-              alt={candyColor}
-              data-id={index}
-              draggable={true}
-              onDragStart={dragStart}
-              onDragOver={(e) => e.preventDefault()}
-              onDragEnter={(e) => e.preventDefault()}
-              onDragLeave={(e) => e.preventDefault()}
-              onDrop={dragDrop}
-              onDragEnd={dragEnd}
-            />
-          ))}
+          <p style={{ color: " rgba(243, 14, 224, 0.87) ", fontSize: 20 }}>Candy Crush Prototype in React ⚛️🍬</p>
+          <ScoreBoard score={scoreDisplay} />
+          <div style={{
+            borderRadius: '10px',
+            width: '1000px',
+            background: 'linear-gradient(rgba(243, 14, 224, 0.5),  rgba(71, 140, 197, 0.49) 100%)',
+          }}>
+            {currentColorArrangement.map((candyColor, index) => (
+              <img
+                key={index}
+                src={candyColor}
+                alt={candyColor}
+                data-id={index}
+                draggable={true}
+                onDragStart={dragStart}
+                onDragOver={(e) => e.preventDefault()}
+                onDragEnter={(e) => e.preventDefault()}
+                onDragLeave={(e) => e.preventDefault()}
+                onDrop={dragDrop}
+                onDragEnd={dragEnd}
+              />
+            ))}
+          </div>
+          <div style={{ padding: '10px', }}>
+            This is a Prototype Candy Crush game built with React.
+            It features core game logic for matching candy and scoring.
+            <p>Code base : https://github.com/ag01portfolio/candy_crush</p>
+          </div>
         </div>
-        <div style={{ padding: '10px', }}>
-          This is a Prototype Candy Crush game built with React.
-          It features core game logic for matching candy and scoring.
-          <p>Code base : https://github.com/ag01portfolio/candy_crush</p>
-        </div>
+
+        <AbhiGitView />
+
       </div>
     </div>
   )
